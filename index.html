@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北京精选办公室 - 预约免费带看</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-8 px-4">
+  
+  <div class="max-w-lg mx-auto">
+    <!-- 头部 -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4 shadow-lg">
+        <i class="fa fa-building text-white text-2xl"></i>
+      </div>
+      <h1 class="text-2xl font-bold text-gray-800 mb-2">精选办公室 免费预约带看</h1>
+      <p class="text-gray-600">专业顾问1对1服务，帮您找到最适合的办公空间</p>
+    </div>
+
+    <!-- 服务保障 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+      <div class="grid grid-cols-3 gap-4 text-center text-sm">
+        <div>
+          <div class="text-green-500 mb-1"><i class="fa fa-check-circle text-xl"></i></div>
+          <div class="text-gray-600">免费带看</div>
+        </div>
+        <div>
+          <div class="text-green-500 mb-1"><i class="fa fa-bolt text-xl"></i></div>
+          <div class="text-gray-600">24小时响应</div>
+        </div>
+        <div>
+          <div class="text-green-500 mb-1"><i class="fa fa-shield text-xl"></i></div>
+          <div class="text-gray-600">不收佣金</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 表单 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">填写信息，立即预约</h2>
+      
+      <form id="leadForm" class="space-y-4">
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">您的称呼</label>
+          <input 
+            type="text" 
+            id="name" 
+            placeholder="例如：王总、李经理"
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            required
+          >
+        </div>
+        
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">联系电话</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            placeholder="请输入您的手机号"
+            maxlength="11"
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            required
+          >
+        </div>
+        
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">需求面积</label>
+          <select 
+            id="area" 
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="">请选择面积</option>
+            <option value="50平以下">50平以下</option>
+            <option value="50-100平">50-100平</option>
+            <option value="100-200平">100-200平</option>
+            <option value="200-500平">200-500平</option>
+            <option value="500平以上">500平以上</option>
+          </select>
+        </div>
+        
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">工位数量</label>
+          <select 
+            id="workstations" 
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="">请选择工位数量</option>
+            <option value="1-5人">1-5人</option>
+            <option value="6-10人">6-10人</option>
+            <option value="11-20人">11-20人</option>
+            <option value="21-50人">21-50人</option>
+            <option value="51-100人">51-100人</option>
+            <option value="100人以上">100人以上</option>
+          </select>
+        </div>
+        
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">隔断/独立房间数量</label>
+          <select 
+            id="partitions" 
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="">请选择隔断数量</option>
+            <option value="无隔断-开放空间">无隔断-开放空间</option>
+            <option value="1个隔断/经理室">1个隔断/经理室</option>
+            <option value="2个隔断">2个隔断</option>
+            <option value="3-4个隔断">3-4个隔断</option>
+            <option value="5个以上隔断">5个以上隔断</option>
+          </select>
+        </div>
+        
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">公司业态（选填）</label>
+          <select 
+            id="businessType" 
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="">请选择公司业态</option>
+            <option value="科技互联网">科技互联网</option>
+            <option value="贸易/进出口">贸易/进出口</option>
+            <option value="律师/会计师事务所">律师/会计师事务所</option>
+            <option value="咨询/管理培训">咨询/管理培训</option>
+            <option value="金融/投资">金融/投资</option>
+            <option value="文化传媒/广告">文化传媒/广告</option>
+            <option value="医疗/健康">医疗/健康</option>
+            <option value="教育/培训">教育/培训</option>
+            <option value="房地产/建筑">房地产/建筑</option>
+            <option value="其他行业">其他行业</option>
+          </select>
+        </div>
+        
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">换房原因（选填）</label>
+          <select 
+            id="reason" 
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="">请选择换房原因</option>
+            <option value="公司扩张，面积不够">公司扩张，面积不够</option>
+            <option value="租期到期，换环境">租期到期，换环境</option>
+            <option value="房租太贵，想降本">房租太贵，想降本</option>
+            <option value="地段不合适，交通不方便">地段不合适，交通不方便</option>
+            <option value="办公环境不满意，想升级">办公环境不满意，想升级</option>
+            <option value="公司缩编，面积太大">公司缩编，面积太大</option>
+            <option value="其他原因">其他原因</option>
+          </select>
+        </div>
+        
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">意向区域（选填）</label>
+          <input 
+            type="text" 
+            id="region" 
+            placeholder="例如：国贸、望京"
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+        </div>
+        
+        <button 
+          type="submit" 
+          id="submitBtn"
+          class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all active:scale-95"
+        >
+          立即免费预约
+        </button>
+      </form>
+      
+      <p class="text-xs text-gray-400 text-center mt-4">
+        <i class="fa fa-lock"></i> 您的信息将被严格保密，仅用于顾问联系
+      </p>
+    </div>
+
+    <!-- 底部 -->
+    <div class="text-center mt-6 text-gray-500 text-sm">
+      <p>白云顾问竭诚为您服务</p>
+      <p class="mt-1">📞 咨询热线：138-xxxx-xxxx</p>
+    </div>
+  </div>
+
+  <!-- 成功弹窗 -->
+  <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-2xl p-8 mx-4 text-center max-w-sm">
+      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="fa fa-check text-green-500 text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">预约成功！</h3>
+      <p class="text-gray-600 mb-6">我们的顾问会在24小时内与您联系</p>
+      <button onclick="closeModal()" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold">
+        好的
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // 表单提交
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const area = document.getElementById('area').value;
+      const workstations = document.getElementById('workstations').value;
+      const partitions = document.getElementById('partitions').value;
+      const businessType = document.getElementById('businessType').value;
+      const reason = document.getElementById('reason').value;
+      const region = document.getElementById('region').value;
+      
+      // 手机号验证
+      if (!/^1[3-9]\d{9}$/.test(phone)) {
+        alert('请输入正确的手机号');
+        return;
+      }
+      
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> 提交中...';
+      
+      // 这里可以对接你的后端接口
+      // 现在先演示本地存储+弹窗通知
+      const leadData = {
+        name,
+        phone,
+        area,
+        workstations,
+        partitions,
+        businessType,
+        reason,
+        region,
+        time: new Date().toLocaleString()
+      };
+      
+      // 存在本地
+      const leads = JSON.parse(localStorage.getItem('leads') || '[]');
+      leads.push(leadData);
+      localStorage.setItem('leads', JSON.stringify(leads));
+      
+      // 同时把数据输出到控制台
+      console.log('🔥 新客户线索来了！', leadData);
+      
+      // 🚀 调用后端API，自动推送到飞书群
+      fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(leadData)
+      }).catch(() => {});
+      
+      // 模拟网络延迟
+      setTimeout(() => {
+        document.getElementById('successModal').classList.remove('hidden');
+        document.getElementById('leadForm').reset();
+        btn.disabled = false;
+        btn.innerHTML = '立即免费预约';
+      }, 1000);
+    });
+    
+    function closeModal() {
+      document.getElementById('successModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
